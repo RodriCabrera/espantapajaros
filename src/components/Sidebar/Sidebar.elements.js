@@ -8,24 +8,26 @@ export const SidebarContainer = styled.div`
 	background-color: #495670;
 	position: fixed;
 	top: 0;
-	left: -75px;
+	left: ${(props) => (props.isActive ? "0px" : "-75px")};
 	height: 100vh;
-	transition: 0.5s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	&:hover {
-		left: -20px;
-	}
+	transition: 0.2s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
 `;
 export const SidebarIconList = styled.div`
 	color: #64ffda;
 	width: 100%;
 	text-align: end;
-	display: flex;
+
+	display: ${(props) => (props.isActive ? "flex" : "none")};
 	flex-direction: column;
+`;
+export const TogglerWrapper = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.7rem;
 `;
 export const SidebarToggler = styled(ImListNumbered)`
 	font-size: 1.5rem;
-	padding: 0.7rem;
-	margin-left: auto;
+	color: #64ffda;
 `;
 export const SidebarLink = styled(Link)`
 	text-align: center;

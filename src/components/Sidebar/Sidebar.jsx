@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	SidebarIconList,
 	SidebarContainer,
 	SidebarLink,
 	SidebarToggler,
+	TogglerWrapper,
 } from "./Sidebar.elements";
 
 const Sidebar = () => {
+	const [isActive, setIsActive] = useState(false);
+	const handleClick = () => {
+		setIsActive(!isActive);
+	};
 	return (
 		<>
-			<SidebarContainer>
-				<SidebarIconList>
+			<SidebarContainer onClick={handleClick} isActive={isActive}>
+				<TogglerWrapper>
 					<SidebarToggler />
+				</TogglerWrapper>
+				<SidebarIconList isActive={isActive}>
 					<SidebarLink to="capitulo1" spy={true} smooth={true} duration={500}>
 						1
 					</SidebarLink>
