@@ -16,7 +16,6 @@ export const SidebarIconList = styled.div`
 	color: #64ffda;
 	width: 100%;
 	text-align: end;
-
 	display: ${(props) => (props.isActive ? "flex" : "none")};
 	flex-direction: column;
 `;
